@@ -1,0 +1,17 @@
+import sys; sys.path.insert(0,'.')
+from render import *
+img=BG.copy(); topbar(img,0)
+img.alpha_composite(TL('PEHLE 5 STUDENTS',100,INK),(0,0)) if False else None
+place(img,TL('INSTITUTE',60,GRY),540,300)
+place(img,TL('PEHLE 5',230,INK),540,430)
+place(img,TL('students',150,OR,'s'),540,610)
+place(img,icon('star',640),540,1000)
+place(img,TL('50%',190,CREAM,'a'),540,975)
+place(img,TL('OFF',100,CREAM),540,1150)
+place(img,TL('LIVE CLASSES · KARACHI',58,INK),540,1420)
+place(img,icon('rr',600,110,55,OR),700,1590)
+place(img,TL('DM: FOREX TRADING',44,CREAM),700,1590)
+p,m,x=pose_at(0.1)
+sp=kid_sprite(0.2,p).resize((int(880*.38),int(1120*.38)),Image.LANCZOS)
+img.alpha_composite(sp,(60,1862-int(530*2*.38)))
+img.convert('RGB').save('cover.jpg',quality=92)
